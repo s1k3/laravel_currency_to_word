@@ -113,19 +113,14 @@ class NumberConverter
         '98' => 'আটানব্বই',
         '99' => 'নিরানব্বই'
     ];
-    private $units = [
-        'crore' => 'কোটি',
-        'lac' => 'লক্ষ',
-        'thousand' => 'হাজার',
-        'hundred' => 'শত',
-        'paisa' => 'Paisa'
-    ];
+    private $units=[];
 
     private function __construct($number, $unit, $language = "en")
     {
         $this->number = $number;
         $this->unit = $unit;
         $this->language = $language;
+        $this->units=config("number_to_word.units.$language");
     }
 
     public static function instance($number, $unit, $language = "en")
@@ -142,10 +137,10 @@ class NumberConverter
                 if($this->unit == "hundred") {
                     $word = $result;
                 }else{
-                    $word = "$result {$this->unit}";
+                    $word = "$result {$this->units[$this->unit]}";
                 }
             }else{
-                $word = "$result {$this->unit}";
+                $word = "$result {$this->units[$this->unit]}";
             }
         } else {
             if (strlen($this->number) == 3 ) {

@@ -40,7 +40,7 @@ class AmountInWord
                 if ($currency_units[$i] == "crore" && strlen($currency_values[$i]) > 3) {
                     $new_instance = AmountInWord::instance($currency_values[$i], $language);
                     $result .= $new_instance->convert($language);
-                    $result .= " " . ($language === 'en' ? "crore" : "কোটি");
+                    $result .= " " . config("number_to_word.units.$language.crore");
                     $result .= " ";
                 } else {
                     $result .= NumberConverter::instance($currency_values[$i], $currency_units[$i], $language)->word();
@@ -48,8 +48,9 @@ class AmountInWord
                 }
             }
         }
+        $result.=config("number_to_word.unit.$language");
         if (!empty($this->fraction)) {
-            $result.= NumberConverter::instance(sprintf("%.2f", "0.{$this->fraction}") * 100,"paisa",$language)->word();
+            $result.=" ". NumberConverter::instance(sprintf("%.2f", "0.{$this->fraction}") * 100,"paisa",$language)->word();
         }
         return $result;
     }
