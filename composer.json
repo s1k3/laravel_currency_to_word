@@ -1,0 +1,30 @@
+{
+  "name": "s1k3/bangla-number-to-word",
+  "description": "Convert number to bangla currency works with both english and bangla",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Robin Khan",
+      "email": "sk118420@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "S1K3\\Bangla\\Number\\To\\Word\\": "src/"
+    },
+    "files": [
+      "src/helper/helper.php"
+    ]
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "S1K3\\Bangla\\Number\\To\\Word\\NumberToWordServiceProvider"
+      ]
+    }
+  }
+}
