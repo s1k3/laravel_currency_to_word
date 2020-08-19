@@ -14,14 +14,14 @@ php artisan vendor:publish --provider="S1K3\Bangla\Number\To\Word\NumberToWordSe
 
 ***Basic Usage***
 ```php
-numer_to_word("1556.62","bn"); //এক হাজার পাঁচশত ছাপ্পান্ন টাকা বাষট্টি পয়সা
+number_to_word("1556.62","bn"); //এক হাজার পাঁচশত ছাপ্পান্ন টাকা বাষট্টি পয়সা
 ```
 Second parameter is optional if it not given then configuration's ***language*** value will be used.
 ```php
-numer_to_word("155342262");//পনের কোটি তিপ্পান্ন লক্ষ বিয়াল্লিশ হাজার দুইশত বাষট্টি টাকা
+number_to_word("155342262");//পনের কোটি তিপ্পান্ন লক্ষ বিয়াল্লিশ হাজার দুইশত বাষট্টি টাকা
 ```
 ```php
-numer_to_word("15262","en");//fifteen thousand two hundred sixty-two taka
+number_to_word("15262","en");//fifteen thousand two hundred sixty-two taka
 ```
 ***Configuration(config/number_to_word.php)***
 ```php
