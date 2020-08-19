@@ -9,7 +9,7 @@ To install this library follow the following steps:
  ```
 * Execute the following command from the command-line to publish the configuration file config/number_to_word.php
 ``` php
-php artisan vendor:publish --provider="S1K3\Bangla\Number\To\Word\NumberToWordServiceProvider::class"
+php artisan vendor:publish --provider="S1K3\Bangla\Number\To\Word\NumberToWordServiceProvider"
 ```
 
 ***Basic Usage***
