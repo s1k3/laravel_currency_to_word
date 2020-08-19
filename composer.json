@@ -1,6 +1,6 @@
 {
   "name": "s1k3/bangla-number-to-word",
-  "description": "Larvel Package to convert number to bangla currency works with both english and bangla",
+  "description": "Laravel Package to convert number to bangla currency works with both english and bangla",
   "license": "MIT",
   "minimum-stability": "dev",
   "authors": [
