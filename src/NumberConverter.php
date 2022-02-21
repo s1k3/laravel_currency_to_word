@@ -13,6 +13,7 @@ class NumberConverter
     private $language;
 
     private $numbers = [
+        '0' => '',
         '1' => 'এক',
         '2' => 'দুই',
         '3' => 'তিন',
@@ -143,6 +144,7 @@ class NumberConverter
                 $word = "$result {$this->units[$this->unit]}";
             }
         } else {
+            $word = "";
             if (strlen($this->number) == 3 ) {
                 $hundred = $this->numbers[(int)$this->number[0]];
                 $tenth = $this->numbers[(int)($this->number[1] . $this->number[2])];
@@ -152,7 +154,9 @@ class NumberConverter
                     $word = "$hundred{$this->units['hundred']} $tenth {$this->units[$this->unit]}";
                 }
             } else {
-                $word = "{$this->numbers[(int)$this->number]} {$this->units[$this->unit]}";
+                if((int)$this->number){
+                    $word = "{$this->numbers[(int)$this->number]} {$this->units[$this->unit]}";
+                }
             }
         }
         return $word;
