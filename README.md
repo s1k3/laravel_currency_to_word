@@ -1,4 +1,8 @@
-#####Laravel Library for converting number to word both for **Bangla & English**
+##### Laravel Library for converting number to word both for **Bangla & English**
+
+***Requirments***
+This package uses **php-intl extension** for English conversion.
+
 To install this library follow the following steps:
 * **composer require s1k3/bangla-number-to-word**
 * **(You may skip this step when using Laravel >= 5.5))**. Navigate to the path/to/config/app.php and add  to the providers array
